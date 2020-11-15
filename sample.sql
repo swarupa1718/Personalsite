@@ -30,12 +30,7 @@ insert into emp values
     (10,'FILLMORE','MANAGER',9,'08-09-1994',56000,NULL,2)
 insert into emp values
     (11,'ADAMS','ENGINEER',10,'03-15-1996',34000,NULL,2)
-insert into emp values
-    (12,'WASHINGTON','ADMIN',6,'04-16-1998',18000,NULL,4)
-insert into emp values
-    (13,'MONROE','ENGINEER',10,'12-03-2000',30000,NULL,2)
-insert into emp values
-    (14,'ROOSEVELT','CPA',9,'10-12-1995',35000,NULL,1)
+
 end
 CREATE TABLE dept (
 deptno INT NOT NULL,
@@ -47,3 +42,14 @@ insert into dept values (2,'RESEARCH','NEW YORK')
 insert into dept values (3,'SALES','ATLANTA')
 insert into dept values (4, 'OPERATIONS','SEATTLE')
 end
+
+
+
+select studentID, FullName, sat_score, recordUpdated
+    from student
+    where (
+        studentID between 1 and 5
+        or studentID = 8
+        or FullName like '%Maximo%'
+        )
+        and sat_score NOT in (1000, 1400);
